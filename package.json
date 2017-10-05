@@ -1,0 +1,28 @@
+{
+  "name": "flashcard-generator",
+  "version": "1.0.0",
+  "description": "Node and NPM Flashcard Generator Project",
+  "main": "BasicCard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaunsnowden/Flashcard-Generator.git"
+  },
+  "keywords": [
+    "NPM",
+    "NODE",
+    "FlashCard"
+  ],
+  "author": "Shaun Snowden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaunsnowden/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/shaunsnowden/Flashcard-Generator#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^3.3.0"
+  }
+}
