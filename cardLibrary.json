@@ -1,0 +1,12 @@
+[
+        {
+            "type": "BasicCard",
+            "front": "Who was the second president of the US?",
+            "back": "John Adams"
+        },
+        {
+            "type": "ClozeCard",
+            "front": "The US was founded in the year 1776.",
+            "back": "1776"
+        }
+]

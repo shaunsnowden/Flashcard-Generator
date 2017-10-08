@@ -3,6 +3,7 @@ function BasicCard(front, back){
     this.back;
 };
 
-console.log("Basic Card Imported.");
+// Test to ensure proper linkage and import executed
+// console.log("Basic Card Imported.".green);
 
 module.exports = BasicCard;
