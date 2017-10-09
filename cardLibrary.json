@@ -1,12 +1,17 @@
 [
-        {
-            "type": "BasicCard",
-            "front": "Who was the second president of the US?",
-            "back": "John Adams"
-        },
-        {
-            "type": "ClozeCard",
-            "front": "The US was founded in the year 1776.",
-            "back": "1776"
-        }
+  {
+    "type": "BasicCard",
+    "front": "Who was the first president of the United States?",
+    "back": "George Washington"
+  },
+  {
+    "type": "ClozeCard",
+    "text": "The United States was founded in the year 1776.",
+    "cloze": "1776"
+  },
+  {
+    "type": "Basic Card",
+    "front": "akljsdf",
+    "back": "awret"
+  }
 ]

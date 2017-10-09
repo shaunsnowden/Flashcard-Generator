@@ -70,7 +70,8 @@ function createCard() {
 						
 
 						library.push(cardObj);
-						fs.writeFile("cardLibrary.json",2, JSON.stringify(library,null,2));
+						console.log(library);
+						fs.writeFile("cardLibrary.json", JSON.stringify(library,null,2));
 
 						inquirer.prompt([
 							{
@@ -109,7 +110,7 @@ function createCard() {
 						// run comparison to ensure clozeText is present in full text
 						if (cardObj.fullText.indexOf(cardObj.clozeText) !== -1){
 							library.push(cardObj);
-							fs.writeFile("cardLibrary.json"), JSON.stringify(library, null, 2);
+							fs.writeFile("cardLibrary.json", JSON.stringify(library, null, 2));
 						} else {
 							console.log("For a cloze statement to work, the cloze text must match a part of the full text.  Please try again.");
 						}
@@ -132,11 +133,35 @@ function createCard() {
 };
 
 function getQuestion(card) {
-	if (cardObj.type === "Basic Card") {
-		drawnCard = new BasicCard(cardObj.front, cardObj.back);
+	if (card.type === "Basic Card") {
+		drawnCard = new BasicCard(card.front, card.back);
 		return drawnCard.front;
 	} else {
-		drawnCard = new ClozeCard (cardObj.fulltext, cardObj.clozeText);
+		drawnCard = new ClozeCard (card.fulltext, card.clozeText);
 		return drawnCard.ClozeRemoved();
+	}
+};
+
+function getDeck() {
+	if (count<library.length) {
+		playedCard = getQuestion(library[count]);
+		inquirer.prompt([
+			{
+				type: "input",
+				message: playedCard,
+				name: "question"
+			}
+		]).then(function(answer){
+			if (answer.question === library[count].back || answer.question === library[count].cloze){
+				console.log(colors.rainbow("CORRECT!!!!"));
+			} else {
+				console.log(colors.red("WRONG :-(.  The correct answer was " + playedCard.back))
+			}
+			count++;
+			askQuestion();	
+		})
+	} else {
+		count = 0;
+		mainMenu();
 	}
 };
